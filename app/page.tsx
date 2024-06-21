@@ -20,7 +20,7 @@ export default function Home() {
         </form>{" "}
         <AddExerciseForm />
         <p>
-          <strong>GET user's exercise log: </strong>
+          <strong>GET user&apos;s exercise log: </strong>
           <code>GET /api/users/:_id/logs?[from][&amp;to][&amp;limit]</code>
         </p>
         <p>
