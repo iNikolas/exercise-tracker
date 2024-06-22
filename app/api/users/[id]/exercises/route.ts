@@ -12,7 +12,9 @@ export async function POST(
   const userId = context.params.id;
   const description = form.get("description")?.toString().trim();
   const duration = Number(form.get("duration")?.toString().trim());
-  const date = form.get("date")?.toString().trim() || new Date();
+  const date = new Date(
+    form.get("date")?.toString().trim() || new Date()
+  );
 
   if (!description || !duration || Number.isNaN(duration)) {
     return NextResponse.json(
