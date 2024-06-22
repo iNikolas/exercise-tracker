@@ -21,6 +21,6 @@ export async function GET(
     _id: userWithExercices.id,
     username: userWithExercices.username,
     count: userWithExercices.exercises.length,
-    logs: userWithExercices.exercises.map(exerciseResponseFactory),
+    log: userWithExercices.exercises.map(exerciseResponseFactory),
   });
 }
