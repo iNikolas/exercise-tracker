@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { client } from "@/db";
-import { exerciseResponseFactory } from "@/utils";
+import { exerciseWithUserResponseFactory } from "@/utils";
 
 export async function POST(
   req: NextRequest,
@@ -31,7 +31,7 @@ export async function POST(
       include: { user: true },
     });
 
-    return NextResponse.json(exerciseResponseFactory(result));
+    return NextResponse.json(exerciseWithUserResponseFactory(result));
   } catch (error) {
     return NextResponse.json(
       {

@@ -6,16 +6,22 @@ export function markIdWithUnderscore({ id, ...rest }: { id: string }) {
   return { ...rest, _id: id };
 }
 
-export function exerciseResponseFactory(
+export function exerciseResponseFactory(exercise: Exercise) {
+  return {
+    date: formatDate(exercise.date.toString()),
+    duration: exercise.duration,
+    description: exercise.description,
+  };
+}
+
+export function exerciseWithUserResponseFactory(
   exercise: {
     user: User;
   } & Exercise
 ) {
   return {
     ...markIdWithUnderscore(exercise.user),
-    date: formatDate(exercise.date.toString()),
-    duration: exercise.duration,
-    description: exercise.description,
+    ...exerciseResponseFactory(exercise),
   };
 }
 
