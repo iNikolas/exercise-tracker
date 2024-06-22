@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import { client } from "@/db";
 import { exerciseResponseFactory } from "@/utils";
-import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
   req: NextRequest,
