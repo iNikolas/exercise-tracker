@@ -28,3 +28,7 @@ export function exerciseWithUserResponseFactory(
 export function formatDate(input: string, formatStr = "EEE MMM dd yyyy") {
   return format(new Date(input), formatStr);
 }
+
+export function isDateFormat(input: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(input);
+}
